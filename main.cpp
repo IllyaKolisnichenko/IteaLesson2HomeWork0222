@@ -6,6 +6,7 @@ int main()
 {
     int val1 = 10;
     
+	
     do{
         cout << val1 << endl;
         val1++;
