@@ -1,18 +1,18 @@
 #include <iostream>
 #include <cstdlib>
 
-int NumberDrops[100]; //масив в который записываем значения 100 выпадений игральной кости
-int MassNumbersDrops[5]; //масив в который записываем число выпадений каждой стороны игральной кости
-int NumberOne = 0; //число выпадений 1
-int NumberTwo = 0;//число выпадений 2
-int NumberThree = 0;//число выпадений 3
-int NumberFour = 0;//число выпадений 4
-int NumberFive = 0;//число выпадений 5
-int NumberSix = 0;//число выпадений 6
-int MaxNumbersDrops = 0; //переменная в которую записываем максимальное число выпадений
-int MinNumbersDrops = 0; // перемення в которую записаваем минимальное число выпадений
-int NumberMaxDrops = 0; // число которое выпало максимальное количествол раз
-int NumberMinDrops = 0; // число которое віпало минимальное количество раз
+int NumberDrops[100]; //an array in which we write 100 drops of a dice
+int MassNumbersDrops[5]; //an array in which we write the number of rolls of each side of the dice
+int NumberOne = 0; //number of rolls 1
+int NumberTwo = 0;//number of rolls 2
+int NumberThree = 0;//number of rolls 3
+int NumberFour = 0;//number of rolls 4
+int NumberFive = 0;//number of rolls 5
+int NumberSix = 0;//number of rolls 6
+int MaxNumbersDrops = 0; //variable in which we write max number of rolls
+int MinNumbersDrops = 0; // variable in which we write max number of rolls
+int NumberMaxDrops = 0; // the number wich droped max numbers times число 
+int NumberMinDrops = 0; //the number wich droped min numbers times число 
 int SizeMass = 0;
 int Max = 0, Min = 0;
 
@@ -30,11 +30,11 @@ int main()
 
     for (int i = 0; i < 100; i++)
     {
-        NumberDrops[i] = getNumber(1, 6); // заполняем масив случайными числами в диапазоне 1-6
+        NumberDrops[i] = getNumber(1, 6); // fill the array a randon numbers from 1 to 6
     }
 
 
-    //----------Находим количество выпадений чисел от 1-6 ------------------------
+    //---------- find the number of rolls on each side------------------------
     for (int i = 0; i < 100; i++)
     {
 
