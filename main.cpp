@@ -32,6 +32,9 @@ int main()
             case 6:
                 number6++;
                 break;
+            default:
+                cout << "Correct number not found \n";
+                break;
             }
     }
 
