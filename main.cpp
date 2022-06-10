@@ -27,6 +27,8 @@ int smallest(int arr[], int size) {
 
 int main() {
 
+    const int throws = 100;
+    const int sides = 6;
     int diceThrows[100];
     int diceSides[6]{};
     int rarest{};
@@ -34,10 +36,9 @@ int main() {
 
     srand(time(nullptr));
     
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < throws; i++) {
         diceThrows[i] = getNumber(1, 6);
-        switch (diceThrows[i])
-        {
+        switch (diceThrows[i]) {
         case 1:
             diceSides[0]++;
             break;
@@ -59,7 +60,7 @@ int main() {
         }
     }
 
-    for(int j = 0; j < 6; j++) {
+    for(int j = 0; j < sides; j++) {
         if(diceSides[rarest] > diceSides[j]) {
             rarest = j;
         }
