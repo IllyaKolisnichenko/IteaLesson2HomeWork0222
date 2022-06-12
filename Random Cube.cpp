@@ -11,7 +11,7 @@ int nameOfMinValue(int array[], int size) //getting the name of the element with
     int minValue = array[0];
     int nameOfMinValue{};
 
-    for (int i = 1; i < size; i++)
+    for (int i{ 1 }; i < size; i++)
     {
         if (array[i] < minValue)
         {
@@ -27,7 +27,7 @@ int nameOfMaxValue(int array[], int size) //getting the name of the element with
     int maxValue = array[0];
     int nameOfMaxValue{};
 
-    for (int i = 1; i < size; i++)
+    for (int i{ 1 }; i < size; i++)
     {
         if (array[i] > maxValue)
         {
@@ -38,11 +38,9 @@ int nameOfMaxValue(int array[], int size) //getting the name of the element with
     return nameOfMaxValue;
 }
    
-
-
 int main()
 {
-    int throws = 100; //number of rolls of the dice
+    const int throws{ 100 }; //number of rolls of the dice
     int sides[6]{}; //number of sides of a dice
 
     srand(time(nullptr));
@@ -70,65 +68,22 @@ int main()
             sides[5]++;
             break;
         default:
+            std::cout << "Program fault";
+            return 0;
             break;
         }
     }
 
     //displaying the number of hits on each side
-    std::cout << "Number of dropouts side 1 is " << sides[0] << std::endl;
-    std::cout << "Number of dropouts side 2 is " << sides[1] << std::endl;
-    std::cout << "Number of dropouts side 3 is " << sides[2] << std::endl;
-    std::cout << "Number of dropouts side 4 is " << sides[3] << std::endl;
-    std::cout << "Number of dropouts side 5 is " << sides[4] << std::endl;
-    std::cout << "Number of dropouts side 6 is " << sides[5] << std::endl;
-    //
+    const auto sideSize{ 6 };
+    for (int i{}; i < sideSize; i++)
+        std::cout << "Number of dropouts side " << i + 1 << " is " << sides[i] << std::endl;
+    
+    //Search and display the side that fell out most often
+    std::cout << "Side " << nameOfMaxValue(sides, sizeof(sides) / sizeof(int)) + 1 << " rolled the most times" << std::endl;
+   
+    //Finding and displaying the side that fell out the least
+    std::cout << "Side " << nameOfMinValue(sides, sizeof(sides) / sizeof(int)) + 1 << " rolled the fewest times" << std::endl;
 
-    switch (nameOfMaxValue(sides, sizeof(sides)/sizeof(int))) //Search and display the side that fell out most often
-    {
-    case 0:
-        std::cout << "Side 1 rolled the most times" << std::endl;
-        break;
-    case 1:
-        std::cout << "Side 2 rolled the most times" << std::endl;
-        break;
-    case 2:
-        std::cout << "Side 3 rolled the most times" << std::endl;
-        break;
-    case 3:
-        std::cout << "Side 4 rolled the most times" << std::endl;
-        break;
-    case 4:
-        std::cout << "Side 5 rolled the most times" << std::endl;
-        break;
-    case 5:
-        std::cout << "Side 6 rolled the most times" << std::endl;
-        break;
-    default:
-        break;
-    } 
-
-    switch (nameOfMinValue(sides, sizeof(sides)/sizeof(int)))   //Finding and displaying the side that fell out the least
-    {
-    case 0:
-        std::cout << "Side 1 rolled the fewest times" << std::endl;
-        break;
-    case 1:
-        std::cout << "Side 2 rolled the fewest times" << std::endl;
-        break;
-    case 2:
-        std::cout << "Side 3 rolled the fewest times" << std::endl;
-        break;
-    case 3:
-        std::cout << "Side 4 rolled the fewest times" << std::endl;
-        break;
-    case 4:
-        std::cout << "Side 5 rolled the fewest times" << std::endl;
-        break;
-    case 5:
-        std::cout << "Side 6 rolled the fewest times" << std::endl;
-        break;
-    default:
-        break;
-    }
     return 0;
 }
