@@ -54,8 +54,11 @@ int main() {
         case 5:
             diceSides[4]++;
             break;
-        default:
+        case 6:
             diceSides[5]++;
+            break;
+        default:
+            std::cout << "Tis impossible";
             break;
         }
     }
