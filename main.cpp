@@ -49,7 +49,7 @@ int main()
 		if (cubeNum[i] > max) max = cubeNum[i];
 		if (cubeNum[i] < min) min = cubeNum[i];
 	}
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < size; i++)
 	{
 		if (max == cubeNum[i]) cout << " The cube side " << i + 1 << " fell the most = " << max << endl;
 		if (min == cubeNum[i]) cout << " The cube side " << i + 1 << " fell the least = " << min << endl;
@@ -57,3 +57,4 @@ int main()
 
 	return 0;
 }
+
