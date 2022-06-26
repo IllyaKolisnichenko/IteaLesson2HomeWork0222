@@ -21,14 +21,11 @@ int getNumber(int min, int count)
 
 int main()
 {
-	setlocale(LC_ALL, "ukr");
+
 	srand(time(nullptr));
 	for (int i = 0; i < 100; i++)
 	{
 		NumberDrops[i] = getNumber(1, 6);
-	}
-	for (int i = 0; i < 100; i++)
-	{
 		switch (NumberDrops[i])
 		{
 		case 1:
@@ -53,12 +50,12 @@ int main()
 	}
 	for (int i = 0; i < 100; i++)
 	{
-		cout << "Кiлькiсть випадання сторони 1 - " << NumberOne << endl;
-		cout << "Кiлькiсть випадання сторони 2 - " << NumberTwo << endl;
-		cout << "Кiлькiсть випадання сторони 3 - " << NumberThree << endl;
-		cout << "Кiлькiсть випадання сторони 4 - " << NumberFour << endl;
-		cout << "Кiлькiсть випадання сторони 5 - " << NumberFive << endl;
-		cout << "Кiлькiсть випадання сторони 6 - " << NumberSix << endl;
+		cout << "The number of losses of the side 1 - " << NumberOne << endl;
+		cout << "The number of losses of the side 2 - " << NumberTwo << endl;
+		cout << "The number of losses of the side 3 - " << NumberThree << endl;
+		cout << "The number of losses of the side 4 - " << NumberFour << endl;
+		cout << "The number of losses of the side 5 - " << NumberFive << endl;
+		cout << "The number of losses of the side 6 - " << NumberSix << endl;
 
 		MassNumberDrops[0] = NumberOne;
 		MassNumberDrops[1] = NumberTwo;
@@ -71,16 +68,6 @@ int main()
 		Min = MassNumberDrops[0];
 		SizeMass = sizeof(MassNumberDrops) / sizeof(int);
 		int NumberMaxDrops = 0;
-		for (int i = 0; i <= SizeMass; i++)
-		{
-
-			if (MassNumberDrops[i] > Max)
-			{
-				Max = MassNumberDrops[i];
-				NumberMaxDrops = i;
-
-			}
-		}
 		int NumberMinDrops = 0;
 		for (int i = 0; i <= SizeMass; i++)
 		{
@@ -90,16 +77,20 @@ int main()
 				Min = MassNumberDrops[i];
 				NumberMinDrops = i;
 			}
+			else if (MassNumberDrops[i] > Max)
+			{
+				Max = MassNumberDrops[i];
+				NumberMaxDrops = i;
+			}
 		}
 		NumberMaxDrops = NumberMaxDrops + 1;
 		NumberMinDrops = NumberMinDrops + 1;
 		cout << "\r\n";
-		cout << "Максимальна кiлькiсть випадань - сторона " << NumberMaxDrops << ": кiлькiсть випадань " << Max << endl;
-		cout << "Мiнiмальна кiлькiсть випадань - сторона " << NumberMinDrops << ": кiлькiсть випадань " << Min << endl;
+		cout << "Maximum number of falls - side " << NumberMaxDrops << ": number of falls " << Max << endl;
+		cout << "Minimum number of falls - side " << NumberMinDrops << ": number of falls " << Min << endl;
 
 
 		return 0;
 
 	}
 }
-
